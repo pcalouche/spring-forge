@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <!-- sets some suggested spring boot defaults -->
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+  <springProperty name="app_name" source="spring.application.name"/>
+
+  <!--
+    When springforge.logging.json-format in the Spring properties is set to true, the logs will be
+    in Logstash JSON format. Otherwise, the logs will be standard colorized Spring Boot logging.
+    The springProperty attribute makes the eh.logging.json-format spring property accessible here.
+  -->
+  <springProperty name="springforge_logging_json_format" source="springforge.logging.json-format"/>
+  <if condition='p("springforge_logging_json_format").equals("true")'>
+    <then>
+      <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+          <fieldNames>
+            <timestamp>ts</timestamp>
+          </fieldNames>
+          <timeZone>UTC</timeZone>
+          <customFields>{"app_name":"${app_name}"}</customFields>
+        </encoder>
+      </appender>
+    </then>
+    <else>
+      <!-- includes an appender named CONSOLE -->
+      <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    </else>
+  </if>
+
+  <!-- register all appenders -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
