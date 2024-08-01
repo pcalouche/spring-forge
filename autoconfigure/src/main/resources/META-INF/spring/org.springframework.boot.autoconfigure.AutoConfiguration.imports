@@ -1,0 +1,2 @@
+dev.pcalouche.springforge.autoconfigure.controlleradvice.CommonControllerAdviceAutoConfiguration
+dev.pcalouche.springforge.autoconfigure.logging.LoggingAutoConfiguration

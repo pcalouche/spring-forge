@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/" # Location of package manifests
+    registries: "*"
+    schedule:
+      interval: "daily"
+    target-branch: "main"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "main"
