@@ -11,10 +11,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  maven-verify:
+  build-and-run-tests:
+    name: Build and Run Tests
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           show-progress: false
@@ -24,5 +25,5 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-      - name: Build and Run Tests
+      - name: Run Maven
         run: mvn -T 4 clean verify
