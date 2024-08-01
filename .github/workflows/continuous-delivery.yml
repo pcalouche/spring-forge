@@ -2,7 +2,7 @@ name: Continuous Integration
 
 on:
   push:
-    branches-ignore:
+    branches:
       - main
       - initial-commit
 
@@ -10,12 +10,11 @@ permissions:
   contents: read
 
 concurrency:
-  group: "${{ github.workflow }}-${{ github.ref != 'refs/heads/main' && github.ref || github.run_id }}"
-  cancel-in-progress: true
+  group: continuous-delivery
 
 jobs:
-  build-and-run-tests:
-    name: Build and Run Tests
+  build-and-run-tests-and-deploy:
+    name: Build, Run Tests, and Deploy
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -29,4 +28,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Run Maven
-        run: mvn -T 4 clean verify
+        run: mvn -T 4 clean deploy
