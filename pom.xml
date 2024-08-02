@@ -107,11 +107,8 @@
 
   <repositories>
     <repository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>github</id>
-      <url>https://maven.pkg.github.com/pcalouche/*</url>
+      <id>central</id>
+      <url>https://repo1.maven.org/maven2</url>
     </repository>
   </repositories>
 
