@@ -23,7 +23,7 @@
 
   <distributionManagement>
     <repository>
-      <id>github</id>
+      <id>github-pcalouche-spring-forge</id>
       <name>Spring Forge</name>
       <url>https://maven.pkg.github.com/pcalouche/spring-forge</url>
     </repository>
