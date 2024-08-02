@@ -1,4 +1,8 @@
 version: 2
+registries:
+  central:
+    type: "maven-repository"
+    url: "https://repo.maven.apache.org/maven2"
 updates:
   - package-ecosystem: "maven"
     directory: "/"
