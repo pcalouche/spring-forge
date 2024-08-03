@@ -105,20 +105,6 @@
     </dependencies>
   </dependencyManagement>
 
-  <repositories>
-    <repository>
-      <id>central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>github-pcalouche-spring-forge</id>
-      <url>https://maven.pkg.github.com/pcalouche/spring-forge</url>
-    </repository>
-  </repositories>
-
   <build>
     <!--
       Plugin management will not apply the plugin to a child POM. Rather it serves as a place to

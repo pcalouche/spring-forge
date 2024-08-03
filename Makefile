@@ -26,7 +26,7 @@ mvn-install-skip-tests: format
 # Check if version is a SNAPSHOT
 .PHONY: check-if-snapshot-version
 check-if-snapshot-version:
-	version="$(shell mvn help:evaluate -Dexpression=spring-enzymes.version -q -DforceStdout)" ; \
+	version="$(shell mvn help:evaluate -Dexpression=spring-forge.version -q -DforceStdout)" ; \
 	echo "version is $$version" ; \
 	if [[ $$version == *-SNAPSHOT ]]; then \
 		echo "Release version is a SNAPSHOT, so manual deploy can proceed." ; \

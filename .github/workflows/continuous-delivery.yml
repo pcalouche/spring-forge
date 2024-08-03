@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - temp
 
 permissions:
   contents: read
@@ -28,6 +29,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Run Maven
-        run: mvn -T 4 -B clean deploy
+        run: mvn -B -s ./.mvn/settings.xml clean deploy
         env:
+          GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ github.token }}

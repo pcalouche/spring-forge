@@ -6,7 +6,8 @@ registries:
 updates:
   - package-ecosystem: "maven"
     directory: "/"
-    registries: "*"
+    registries:
+      - central
     schedule:
       interval: "monthly"
     target-branch: "main"
