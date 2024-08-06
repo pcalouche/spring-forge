@@ -28,4 +28,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Run Maven
-        run: mvn -B -s ./.mvn/settings.xml clean verify
+        run: make mvn-deploy-cd
