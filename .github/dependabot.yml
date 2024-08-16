@@ -13,6 +13,7 @@ updates:
     directory: "/"
     registries:
       - central
+      - github-pcalouche-spring-forge
     schedule:
       interval: "monthly"
     target-branch: "main"
