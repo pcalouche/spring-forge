@@ -28,6 +28,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Run Maven
-        run: mvn -T 4 -B clean deploy
+        run: make mvn-deploy-cd
         env:
+          GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ github.token }}

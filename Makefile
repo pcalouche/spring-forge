@@ -13,6 +13,10 @@ mvn-verify: format
 mvn-verify-skip-tests: format
 	mvn clean verify -DskipTests
 
+.PHONY: mvn-verify-ci
+mvn-verify-ci:
+	mvn -B -s ./.mvn/settings.xml verify
+
 # Run tests and install locally
 .PHONY: mvn-install
 mvn-install: format
@@ -23,10 +27,14 @@ mvn-install: format
 mvn-install-skip-tests: format
 	mvn clean install -DskipTests
 
+.PHONY: mvn-deploy-cd
+mvn-deploy-cd:
+	mvn -B -s ./.mvn/settings.xml deploy
+
 # Check if version is a SNAPSHOT
 .PHONY: check-if-snapshot-version
 check-if-snapshot-version:
-	version="$(shell mvn help:evaluate -Dexpression=spring-enzymes.version -q -DforceStdout)" ; \
+	version="$(shell mvn help:evaluate -Dexpression=spring-forge.version -q -DforceStdout)" ; \
 	echo "version is $$version" ; \
 	if [[ $$version == *-SNAPSHOT ]]; then \
 		echo "Release version is a SNAPSHOT, so manual deploy can proceed." ; \

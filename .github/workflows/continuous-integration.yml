@@ -28,4 +28,4 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Run Maven
-        run: mvn -T 4 -B clean verify
+        run: make mvn-verify-ci

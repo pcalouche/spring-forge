@@ -23,7 +23,7 @@
 
   <distributionManagement>
     <repository>
-      <id>github</id>
+      <id>github-pcalouche-spring-forge</id>
       <name>Spring Forge</name>
       <url>https://maven.pkg.github.com/pcalouche/spring-forge</url>
     </repository>
@@ -61,12 +61,12 @@
     <versions-maven-plugin.version>2.17.1</versions-maven-plugin.version>
 
     <!-- Third party plugin versions. Spring Boot Parent POM manages several already. -->
-    <exec-maven-plugin.version>3.3.0</exec-maven-plugin.version>
+    <exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
     <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
     <git-build-hook-maven-plugin.version>3.5.0</git-build-hook-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
     <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
-    <spring-javaformat-maven-plugin.version>0.0.42</spring-javaformat-maven-plugin.version>
+    <spring-javaformat-maven-plugin.version>0.0.43</spring-javaformat-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -104,20 +104,6 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
-
-  <repositories>
-    <repository>
-      <id>central</id>
-      <url>https://repo.maven.apache.org/maven2</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-      <id>github-pcalouche-spring-forge</id>
-      <url>https://maven.pkg.github.com/pcalouche/spring-forge</url>
-    </repository>
-  </repositories>
 
   <build>
     <!--
