@@ -28,7 +28,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Run Maven
-        run: make mvn-verify-ci
+        run: make mvn-verify-cd
         env:
           GITHUB_ACTOR: ${{ github.actor }}
           GITHUB_TOKEN: ${{ github.token }}
