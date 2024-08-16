@@ -3,17 +3,17 @@ registries:
   central:
     type: "maven-repository"
     url: "https://repo.maven.apache.org/maven2"
-  github-pcalouche-spring-forge:
-    type: "maven-repository"
-    url: "https://maven.pkg.github.com/pcalouche/spring-forge"
-    username: pcalouche
-    password: "${{ secrets.PCALOUCHE_READ_PACKAGE_TOKEN }}"
+#  github-pcalouche-spring-forge:
+#    type: "maven-repository"
+#    url: "https://maven.pkg.github.com/pcalouche/spring-forge"
+#    username: pcalouche
+#    password: "${{ secrets.PCALOUCHE_READ_PACKAGE_TOKEN }}"
 updates:
   - package-ecosystem: "maven"
     directory: "/"
     registries:
       - central
-      - github-pcalouche-spring-forge
+#      - github-pcalouche-spring-forge
     schedule:
       interval: "monthly"
     target-branch: "main"
