@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.3.2</version>
+    <version>3.4.0-M1</version>
     <relativePath/>
   </parent>
 
@@ -224,27 +224,6 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <!--
-              Annotation processors are managed here. It is important to not that if a child pom
-              declares its own that they will completely replace this configuration. To avoid
-              unpredictable behavior it is best to add any new annotation processors here.
-            -->
-            <annotationProcessorPaths>
-              <path>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-              </path>
-              <path>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-configuration-processor</artifactId>
-              </path>
-              <path>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-autoconfigure-processor</artifactId>
-              </path>
-            </annotationProcessorPaths>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>

@@ -14,6 +14,7 @@
 
   <modules>
     <module>pcalouche-spring-boot-starter-app</module>
+    <module>pcalouche-spring-boot-starter-logging</module>
     <module>pcalouche-spring-boot-starter-test</module>
   </modules>
 
