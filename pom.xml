@@ -6,11 +6,11 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.3.2</version>
+    <version>3.4.0-M2</version>
     <relativePath/>
   </parent>
 
-  <groupId>dev.pcalouche.springforge.spring33x</groupId>
+  <groupId>dev.pcalouche.springforge.spring34x</groupId>
   <artifactId>spring-forge-starter-parent</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
@@ -77,12 +77,12 @@
         <version>${commons-codec.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring33x</groupId>
+        <groupId>dev.pcalouche.springforge.spring34x</groupId>
         <artifactId>pcalouche-spring-boot-starter-app</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring33x</groupId>
+        <groupId>dev.pcalouche.springforge.spring34x</groupId>
         <artifactId>pcalouche-spring-boot-starter-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
@@ -224,27 +224,6 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <!--
-              Annotation processors are managed here. It is important to not that if a child pom
-              declares its own that they will completely replace this configuration. To avoid
-              unpredictable behavior it is best to add any new annotation processors here.
-            -->
-            <annotationProcessorPaths>
-              <path>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-              </path>
-              <path>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-configuration-processor</artifactId>
-              </path>
-              <path>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-autoconfigure-processor</artifactId>
-              </path>
-            </annotationProcessorPaths>
-          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -271,7 +250,7 @@
               <configuration>
                 <rules>
                   <requireMavenVersion>
-                    <version>[3.8.8,)</version>
+                    <version>[3.8,)</version>
                   </requireMavenVersion>
                   <dependencyConvergence/>
                   <banDuplicatePomDependencyVersions/>

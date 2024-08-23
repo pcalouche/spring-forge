@@ -9,7 +9,7 @@
     <version>${revision}</version>
   </parent>
 
-  <artifactId>pcalouche-spring-boot-starter-app</artifactId>
+  <artifactId>pcalouche-spring-boot-starter-logging</artifactId>
 
   <dependencies>
     <dependency>
@@ -18,26 +18,18 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring34x</groupId>
-      <artifactId>pcalouche-spring-boot-starter-logging</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-    <dependency>
       <groupId>dev.pcalouche.springforge.spring34x.libs</groupId>
-      <artifactId>exceptions</artifactId>
+      <artifactId>logging</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-actuator</artifactId>
+      <groupId>net.logstash.logback</groupId>
+      <artifactId>logstash-logback-encoder</artifactId>
     </dependency>
+    <!-- This is needed for logback "Conditional Processing". See https://logback.qos.ch/manual/configuration.html#conditional -->
     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-validation</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-web</artifactId>
+      <groupId>org.codehaus.janino</groupId>
+      <artifactId>janino</artifactId>
     </dependency>
   </dependencies>
 
