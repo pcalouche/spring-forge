@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>dev.pcalouche.springforge.spring33x</groupId>
+    <groupId>dev.pcalouche.springforge.spring34x</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
     <version>${revision}</version>
   </parent>
@@ -13,7 +13,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring33x.libs</groupId>
+      <groupId>dev.pcalouche.springforge.spring34x.libs</groupId>
       <artifactId>exceptions</artifactId>
       <version>${project.version}</version>
       <optional>true</optional>
@@ -49,7 +49,7 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring33x.libs</groupId>
+      <groupId>dev.pcalouche.springforge.spring34x.libs</groupId>
       <artifactId>logging-test</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
