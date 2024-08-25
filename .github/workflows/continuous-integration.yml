@@ -4,7 +4,7 @@ on:
   push:
     branches-ignore:
       - main
-      - spring-3.3.x
+      - spring33x-release
 
 permissions:
   contents: read
