@@ -10,7 +10,7 @@
     <relativePath/>
   </parent>
 
-  <groupId>dev.pcalouche.springforge.spring34x</groupId>
+  <groupId>dev.pcalouche.springforge.spring33x</groupId>
   <artifactId>spring-forge-starter-parent</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
@@ -74,12 +74,12 @@
         <version>${commons-codec.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring34x</groupId>
+        <groupId>dev.pcalouche.springforge.spring33x</groupId>
         <artifactId>pcalouche-spring-boot-starter-app</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring34x</groupId>
+        <groupId>dev.pcalouche.springforge.spring33x</groupId>
         <artifactId>pcalouche-spring-boot-starter-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
