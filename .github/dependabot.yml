@@ -30,7 +30,7 @@ updates:
     target-branch: "dependabot-staging-spring33x"
     open-pull-requests-limit: 10
     groups:
-      protos:
+      maven-plugins:
         patterns:
           - org.apache.maven.plugins*
   - package-ecosystem: "github-actions"
