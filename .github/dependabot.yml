@@ -3,20 +3,31 @@ registries:
   central:
     type: "maven-repository"
     url: "https://repo.maven.apache.org/maven2"
-#  github-pcalouche-spring-forge:
-#    type: "maven-repository"
-#    url: "https://maven.pkg.github.com/pcalouche/spring-forge"
-#    username: pcalouche
-#    password: "${{ secrets.PCALOUCHE_READ_PACKAGE_TOKEN }}"
 updates:
   - package-ecosystem: "maven"
     directory: "/"
     registries:
       - central
-#      - github-pcalouche-spring-forge
     schedule:
       interval: "monthly"
-    target-branch: "main"
+    target-branch: "dependabot-staging-main"
+    open-pull-requests-limit: 10
+    groups:
+      maven-plugins:
+        patterns:
+          - org.apache.maven.plugins*
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    target-branch: "dependabot-staging-main"
+  - package-ecosystem: "maven"
+    directory: "/"
+    registries:
+      - central
+    schedule:
+      interval: "monthly"
+    target-branch: "dependabot-staging-spring33x"
     open-pull-requests-limit: 10
     groups:
       protos:
@@ -26,21 +37,4 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    target-branch: "main"
-#  - package-ecosystem: "maven"
-#    directory: "/"
-#    registries:
-#      - central
-#    schedule:
-#      interval: "monthly"
-#    target-branch: "dependabot-staging-spring33x"
-#    open-pull-requests-limit: 10
-#    groups:
-#      protos:
-#        patterns:
-#          - org.apache.maven.plugins*
-#  - package-ecosystem: "github-actions"
-#    directory: "/"
-#    schedule:
-#      interval: "monthly"
-#    target-branch: "dependabot-staging-spring33x"
+    target-branch: "dependabot-staging-spring33x"
