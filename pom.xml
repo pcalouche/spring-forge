@@ -41,7 +41,6 @@
     <revision>${spring-forge.version}</revision>
 
     <!-- Overrides to Spring Boot Managed dependencies -->
-    <commons-codec.version>1.17.1</commons-codec.version>
 
     <!-- Third party dependencies -->
     <apache-poi.version>5.3.0</apache-poi.version>
@@ -68,11 +67,6 @@
 
   <dependencyManagement>
     <dependencies>
-      <dependency>
-        <groupId>commons-codec</groupId>
-        <artifactId>commons-codec</artifactId>
-        <version>${commons-codec.version}</version>
-      </dependency>
       <dependency>
         <groupId>dev.pcalouche.springforge.spring34x</groupId>
         <artifactId>pcalouche-spring-boot-starter-app</artifactId>
