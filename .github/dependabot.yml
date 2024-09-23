@@ -9,7 +9,7 @@ updates:
     registries:
       - central
     schedule:
-      interval: "daily"
+      interval: "weekly"
     target-branch: "dependabot-staging-main"
     open-pull-requests-limit: 10
     groups:
@@ -19,14 +19,14 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     target-branch: "dependabot-staging-main"
   - package-ecosystem: "maven"
     directory: "/"
     registries:
       - central
     schedule:
-      interval: "daily"
+      interval: "weekly"
     target-branch: "dependabot-staging-spring33x"
     open-pull-requests-limit: 10
     groups:
@@ -36,5 +36,5 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     target-branch: "dependabot-staging-spring33x"
