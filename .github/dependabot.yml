@@ -16,6 +16,9 @@ updates:
       maven-plugins:
         patterns:
           - org.apache.maven.plugins*
+    ignore:
+      - dependency-name: "org.springframework.boot:spring-boot-starter-parent"
+        update-types: [ "version-update:semver-minor", "version-update:semver-major" ]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -33,6 +36,9 @@ updates:
       maven-plugins:
         patterns:
           - org.apache.maven.plugins*
+    ignore:
+      - dependency-name: "org.springframework.boot:spring-boot-starter-parent"
+        update-types: [ "version-update:semver-minor", "version-update:semver-major" ]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
