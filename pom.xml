@@ -62,7 +62,7 @@
     <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
     <git-build-hook-maven-plugin.version>3.5.0</git-build-hook-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-    <spotless-maven-plugin.version>2.44.1</spotless-maven-plugin.version>
+    <spotless-maven-plugin.version>2.44.2</spotless-maven-plugin.version>
     <spring-javaformat-maven-plugin.version>0.0.43</spring-javaformat-maven-plugin.version>
   </properties>
 
