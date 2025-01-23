@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.4.1</version>
+    <version>3.4.2</version>
     <relativePath/>
   </parent>
 
@@ -43,8 +43,8 @@
     <!-- Overrides to Spring Boot Managed dependencies -->
 
     <!-- Third party dependencies -->
-    <apache-poi.version>5.3.0</apache-poi.version>
-    <commons-text.version>1.12.0</commons-text.version>
+    <apache-poi.version>5.4.0</apache-poi.version>
+    <commons-text.version>1.13.0</commons-text.version>
     <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
 
     <!-- Use alternate plugins versions than what is in the spring-boot-starter-parent. -->
@@ -62,7 +62,7 @@
     <flatten-maven-plugin.version>1.6.0</flatten-maven-plugin.version>
     <git-build-hook-maven-plugin.version>3.5.0</git-build-hook-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-    <spotless-maven-plugin.version>2.43.0</spotless-maven-plugin.version>
+    <spotless-maven-plugin.version>2.44.2</spotless-maven-plugin.version>
     <spring-javaformat-maven-plugin.version>0.0.43</spring-javaformat-maven-plugin.version>
   </properties>
 
