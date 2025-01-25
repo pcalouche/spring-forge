@@ -43,3 +43,5 @@ out/
 .DS_Store
 .AppleDouble
 .LSOverride
+
+.java-version
