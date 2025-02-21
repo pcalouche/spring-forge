@@ -221,6 +221,22 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <annotationProcessorPaths>
+              <path>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+              </path>
+              <path>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+              </path>
+            </annotationProcessorPaths>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -323,22 +339,10 @@
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
           <configuration>
-            <!--
-                Spring's Boot Maven plugin will include provided dependencies in the final jar
-                which is not the behavior when a regular jar is created. This is because a Spring
-                Boot Jar is built in a specialized way. In most cases we don't want these even if
-                they may not cause any problems.
-                See https://docs.spring.io/spring-boot/docs/3.3.x/maven-plugin/reference/htmlsingle/#packaging.examples.exclude-dependency
-                for more details.
-            -->
             <excludes>
               <exclude>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-              </exclude>
-              <exclude>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-autoconfigure-processor</artifactId>
               </exclude>
             </excludes>
           </configuration>
