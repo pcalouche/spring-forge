@@ -51,8 +51,8 @@ Spring Forge consists of the following modules
 
 |                       Module                        |                                             Description                                             | Spring Forge Dependabot Staging Branch |    Spring Forge Maven Group Name    |
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------|-------------------------------------|
-| [Spring Forge Starter POM](pom.xml)                 | The root POM that is intended to be used as the parent POM in applications or libraries.            | main-dependabot-staging                | dev.pcalouche.springforge.spring34x |
-| [autoconfigure](autoconfigure)                      | This module contains custom Spring Boot autoconfiguration and its supporting classes.               | spring33x-dependabot-staging           | dev.pcalouche.springforge.spring33x |
+| [Spring Forge Starter POM](pom.xml)                 | The root POM that is intended to be used as the parent POM in applications or libraries.            | main-dependabot-staging                | dev.pcalouche.springforge.spring35x |
+| [autoconfigure](autoconfigure)                      | This module contains custom Spring Boot autoconfiguration and its supporting classes.               | spring34x-dependabot-staging           | dev.pcalouche.springforge.spring34x |
 | [libs](libs)                                        | Contains libraries to support the autoconfiguration.                                                |                                        |                                     |
 | [spring-boot-starters-module](spring-boot-starters) | Custom Spring Boot Starters that applications or libraries can use to active Spring Forge features. |                                        |                                     |
 
@@ -202,8 +202,8 @@ Spring Forge uses the following branching strategy in order to support multiple 
 
 | Spring Boot Version | Spring Forge Release Branch | Spring Forge Dependabot Staging Branch |     Spring Forge Maven Group Name     |
 |---------------------|-----------------------------|----------------------------------------|---------------------------------------|
-| `3.4.x`             | `main`                      | `main-dependabot-staging`              | `dev.pcalouche.springforge.spring34x` |
-| `3.3.x`             | `spring-3.3.x`              | `spring33x-dependabot-staging`         | `dev.pcalouche.springforge.spring33x` |
+| `3.5.x`             | `main`                      | `dependabot-staging-main`              | `dev.pcalouche.springforge.spring35x` |
+| `3.4.x`             | `spring34x-release`         | `dependabot-staging-spring34xq`        | `dev.pcalouche.springforge.spring34x` |
 
 The `main` branch will contain code for the most recent Spring Boot version supported by Spring Forge. How many other release branches depends on what versions of Spring Boot you want Spring Forge to work with. When a release branch is no longer needed it, it can be marked as readonly and have its dependabot configuration removed.
 
