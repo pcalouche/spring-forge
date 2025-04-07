@@ -45,7 +45,7 @@
     <!-- Third party dependencies -->
     <apache-poi.version>5.4.1</apache-poi.version>
     <commons-text.version>1.13.0</commons-text.version>
-    <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
+    <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
 
     <!-- Third party plugin versions. Spring Boot Parent POM manages several already. -->
     <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
