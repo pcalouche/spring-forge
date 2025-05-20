@@ -43,9 +43,9 @@
     <!-- Overrides to Spring Boot Managed dependencies -->
 
     <!-- Third party dependencies -->
-    <apache-poi.version>5.4.0</apache-poi.version>
-    <commons-text.version>1.13.0</commons-text.version>
-    <logstash-logback-encoder.version>8.0</logstash-logback-encoder.version>
+    <apache-poi.version>5.4.1</apache-poi.version>
+    <commons-text.version>1.13.1</commons-text.version>
+    <logstash-logback-encoder.version>8.1</logstash-logback-encoder.version>
 
     <!-- Use alternate plugins versions than what is in the spring-boot-starter-parent. -->
     <maven-clean-plugin.version>3.4.1</maven-clean-plugin.version>
@@ -61,9 +61,9 @@
     <exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
     <flatten-maven-plugin.version>1.7.0</flatten-maven-plugin.version>
     <git-build-hook-maven-plugin.version>3.5.0</git-build-hook-maven-plugin.version>
-    <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
-    <spotless-maven-plugin.version>2.44.3</spotless-maven-plugin.version>
-    <spring-javaformat-maven-plugin.version>0.0.43</spring-javaformat-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
+    <spotless-maven-plugin.version>2.44.4</spotless-maven-plugin.version>
+    <spring-javaformat-maven-plugin.version>0.0.44</spring-javaformat-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
@@ -92,6 +92,16 @@
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
         <version>${apache-poi.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
