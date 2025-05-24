@@ -8,6 +8,7 @@
   * [Preconfigured Maven Plugins TODO](#preconfigured-maven-plugins-todo)
   * [Makefile](#makefile)
   * [Spring Forge Autoconfiguration](#spring-forge-autoconfiguration)
+    * [Naming convention](#naming-convention)
     * [Common Controller Advice AutoConfiguration](#common-controller-advice-autoconfiguration)
     * [Logging Auto Configuration](#logging-auto-configuration)
   * [The Spring Forge Libraries](#the-spring-forge-libraries)
