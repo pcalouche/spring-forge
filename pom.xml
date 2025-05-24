@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.4.5</version>
+    <version>3.4.6</version>
     <relativePath/>
   </parent>
 
@@ -53,7 +53,7 @@
     <git-build-hook-maven-plugin.version>3.5.0</git-build-hook-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.13</jacoco-maven-plugin.version>
     <spotless-maven-plugin.version>2.44.4</spotless-maven-plugin.version>
-    <spring-javaformat-maven-plugin.version>0.0.44</spring-javaformat-maven-plugin.version>
+    <spring-javaformat-maven-plugin.version>0.0.45</spring-javaformat-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
