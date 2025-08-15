@@ -242,6 +242,22 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <!--
+              Use goal that sets a property pointing to the artifact file for each project dependency.
+              See https://maven.apache.org/plugins/maven-dependency-plugin/properties-mojo.html
+              This allows the Maven Surefire and Failsafe plugins to resolve the Mockito agent jar.
+            -->
+            <execution>
+              <goals>
+                <goal>properties</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
           <version>${maven-deploy-plugin.version}</version>
           <configuration>
@@ -277,6 +293,25 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe-plugin.version}</version>
+          <!--
+            Adds Mockito as agent to this plugin.
+            See https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+            With Java 17 this causes a warning to display saying this will be required with Java 21+.
+          -->
+          <configuration>
+            <!--
+              @{argLine} preserves existing JVM args (e.g., JaCoCo).
+              ${org.mockito:mockito-core:jar} is resolved by dependency-plugin above.
+              -Xshare:off is optional (disables Class Data Sharing to avoid agent issues).
+            -->
+            <!--suppress UnresolvedMavenProperty -->
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar} -Xshare:off</argLine>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
           <version>${maven-source-plugin.version}</version>
           <executions>
@@ -287,6 +322,25 @@
               </goals>
             </execution>
           </executions>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin.version}</version>
+          <!--
+            Adds Mockito as agent to this plugin.
+            See https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
+            With Java 17 this causes a warning to display saying this will be required with Java 21+.
+          -->
+          <configuration>
+            <!--
+              @{argLine} preserves existing JVM args (e.g., JaCoCo).
+              ${org.mockito:mockito-core:jar} is resolved by dependency-plugin above.
+              -Xshare:off is optional (disables Class Data Sharing to avoid agent issues).
+            -->
+            <!--suppress UnresolvedMavenProperty -->
+            <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar} -Xshare:off</argLine>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -358,6 +412,10 @@
       <plugin>
         <groupId>io.spring.javaformat</groupId>
         <artifactId>spring-javaformat-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
