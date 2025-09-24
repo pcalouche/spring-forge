@@ -31,7 +31,7 @@
 
   <properties>
     <!-- General properties -->
-    <java.version>21</java.version>
+    <java.version>25</java.version>
     <!--
       The ${spring-forge.version} controls the versioning for the project and is added to the
       Spring Boot build info, so it displays as part of Spring Boot Actuator's Info endpoint. This
