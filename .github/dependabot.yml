@@ -39,6 +39,8 @@ updates:
     ignore:
       - dependency-name: "org.springframework.boot:spring-boot-starter-parent"
         update-types: [ "version-update:semver-minor", "version-update:semver-major" ]
+      - dependency-name: "net.logstash.logback:logstash-logback-encoder"
+        update-types: [ "version-update:semver-major" ]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
