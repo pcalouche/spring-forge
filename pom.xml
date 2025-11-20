@@ -43,7 +43,7 @@
     <!-- Overrides to Spring Boot Managed dependencies -->
 
     <!-- Third party dependencies -->
-    <apache-poi.version>5.4.1</apache-poi.version>
+    <apache-poi.version>5.5.0</apache-poi.version>
     <commons-text.version>1.14.0</commons-text.version>
     <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
 
