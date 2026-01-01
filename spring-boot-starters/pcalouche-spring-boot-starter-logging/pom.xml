@@ -26,11 +26,6 @@
       <groupId>net.logstash.logback</groupId>
       <artifactId>logstash-logback-encoder</artifactId>
     </dependency>
-    <!-- This is needed for logback "Conditional Processing". See https://logback.qos.ch/manual/configuration.html#conditional -->
-    <dependency>
-      <groupId>org.codehaus.janino</groupId>
-      <artifactId>janino</artifactId>
-    </dependency>
   </dependencies>
 
 </project>
