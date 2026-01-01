@@ -71,9 +71,9 @@ Add the following to your application's POM to use Spring Forge.
 
   <parent>
     <!-- 
-      The last part of the package name represents the Spring Boot version used by Spring Forge. For instance, spring34x maps to Spring Boot 3.4.x and spring33x maps to Spring Boot 3.3.x.
+      The last part of the package name represents the Spring Boot version used by Spring Forge. For instance, spring40x maps to Spring Boot 4.0.x and spring35x maps to Spring Boot 3.5.x.
     -->
-    <groupId>dev.pcalouche.springforge.spring34x</groupId>
+    <groupId>dev.pcalouche.springforge.spring40x</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath/>
@@ -97,11 +97,11 @@ Add the following to your application's POM to use Spring Forge.
   <dependencies>
     <!-- Add the Spring Forge Starters and any dependencies you want to use. -->
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring34x</groupId>
+      <groupId>dev.pcalouche.springforge.spring40x</groupId>
       <artifactId>pcalouche-spring-boot-starter-app</artifactId>
     </dependency>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring34x</groupId>
+      <groupId>dev.pcalouche.springforge.spring40x</groupId>
       <artifactId>pcalouche-spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
@@ -177,9 +177,7 @@ also protected, so an application is free to extend it to modify the existing be
 ### Logging Auto Configuration
 
 This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. The
-`pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging` which bundles . It's only
-configurable behavior is setting `springforge.logging.json-format=true` to enable logging in JSON format. This is useful
-for consumption by various monitoring tools.
+`pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging` which bundles [Logstash](https://github.com/logfellow/logstash-logback-encoder/blob/main/pom.xml) to make advanced logging features available in applications.
 
 ## The Spring Forge Libraries
 
@@ -203,8 +201,8 @@ Spring Forge uses the following branching strategy in order to support multiple 
 
 | Spring Boot Version | Spring Forge Release Branch | Spring Forge Dependabot Staging Branch |     Spring Forge Maven Group Name     |
 |---------------------|-----------------------------|----------------------------------------|---------------------------------------|
-| `3.5.x`             | `main`                      | `dependabot-staging-main`              | `dev.pcalouche.springforge.spring35x` |
-| `3.4.x`             | `spring34x-release`         | `dependabot-staging-spring34xq`        | `dev.pcalouche.springforge.spring34x` |
+| `4.0.x`             | `main`                      | `dependabot-staging-main`              | `dev.pcalouche.springforge.spring40x` |
+| `3.5.x`             | `spring35x-release`         | `dependabot-staging-spring35x`         | `dev.pcalouche.springforge.spring35x` |
 
 The `main` branch will contain code for the most recent Spring Boot version supported by Spring Forge. How many other release branches depends on what versions of Spring Boot you want Spring Forge to work with. When a release branch is no longer needed it, it can be marked as readonly and have its dependabot configuration removed.
 
