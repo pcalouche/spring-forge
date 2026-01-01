@@ -177,9 +177,7 @@ also protected, so an application is free to extend it to modify the existing be
 ### Logging Auto Configuration
 
 This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. The
-`pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging` which bundles . It's only
-configurable behavior is setting `springforge.logging.json-format=true` to enable logging in JSON format. This is useful
-for consumption by various monitoring tools.
+`pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging` which bundles [Logstash](https://github.com/logfellow/logstash-logback-encoder/blob/main/pom.xml) to make advanced logging features available in applications.
 
 ## The Spring Forge Libraries
 
