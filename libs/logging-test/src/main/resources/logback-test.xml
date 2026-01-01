@@ -24,7 +24,5 @@
   <logger name="com.github.dockerjava" level="WARN"/>
   <logger name="com.github.dockerjava.zerodep.shaded.org.apache.hc.client5.http.wire" level="OFF"/>
   <!-- End recommended test logging for test containers -->
-  <!-- This one is noisy in tests too. -->
-  <logger name="de.flapdoodle.embed.mongo" level="WARN"/>
 
 </configuration>
