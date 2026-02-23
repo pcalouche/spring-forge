@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.2</version>
+    <version>4.0.3</version>
     <relativePath/>
   </parent>
 
@@ -41,6 +41,7 @@
     <revision>${spring-forge.version}</revision>
 
     <!-- Overrides to Spring Boot Managed dependencies -->
+    <byte-buddy.version>1.18.3</byte-buddy.version>
 
     <!-- Third party dependencies -->
     <apache-poi.version>5.5.1</apache-poi.version>
