@@ -141,7 +141,7 @@
               </includes>
               <sortPom>
                 <nrOfIndentSpace>2</nrOfIndentSpace>
-                <indentSchemaLocation>true</indentSchemaLocation>
+                <indentAttribute>schemaLocation</indentAttribute>
                 <expandEmptyElements>false</expandEmptyElements>
                 <sortProperties>false</sortProperties>
                 <sortModules>true</sortModules>
