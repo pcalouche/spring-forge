@@ -6,11 +6,11 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.0.7</version>
+    <version>4.1.0</version>
     <relativePath/>
   </parent>
 
-  <groupId>dev.pcalouche.springforge.spring40x</groupId>
+  <groupId>dev.pcalouche.springforge.spring41x</groupId>
   <artifactId>spring-forge-starter-parent</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
@@ -62,12 +62,12 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring40x</groupId>
+        <groupId>dev.pcalouche.springforge.spring41x</groupId>
         <artifactId>pcalouche-spring-boot-starter-app</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring40x</groupId>
+        <groupId>dev.pcalouche.springforge.spring41x</groupId>
         <artifactId>pcalouche-spring-boot-starter-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
