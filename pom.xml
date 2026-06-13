@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>3.5.14</version>
+    <version>3.5.15</version>
     <relativePath/>
   </parent>
 
@@ -54,8 +54,8 @@
     <exec-maven-plugin.version>3.6.3</exec-maven-plugin.version>
     <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
     <git-build-hook-maven-plugin.version>3.6.0</git-build-hook-maven-plugin.version>
-    <jacoco-maven-plugin.version>0.8.14</jacoco-maven-plugin.version>
-    <spotless-maven-plugin.version>3.4.0</spotless-maven-plugin.version>
+    <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+    <spotless-maven-plugin.version>3.6.0</spotless-maven-plugin.version>
     <spring-javaformat-maven-plugin.version>0.0.47</spring-javaformat-maven-plugin.version>
   </properties>
 
