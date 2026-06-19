@@ -45,7 +45,7 @@
 
     <!-- Third party dependencies -->
     <apache-poi.version>5.5.1</apache-poi.version>
-    <commons-io.version>2.21.0</commons-io.version>
+    <commons-io.version>2.22.0</commons-io.version>
     <commons-text.version>1.15.0</commons-text.version>
     <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
 
@@ -56,7 +56,7 @@
     <flatten-maven-plugin.version>1.7.3</flatten-maven-plugin.version>
     <git-build-hook-maven-plugin.version>3.6.0</git-build-hook-maven-plugin.version>
     <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
-    <spotless-maven-plugin.version>3.6.0</spotless-maven-plugin.version>
+    <spotless-maven-plugin.version>3.7.0</spotless-maven-plugin.version>
     <spring-javaformat-maven-plugin.version>0.0.47</spring-javaformat-maven-plugin.version>
   </properties>
 
