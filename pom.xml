@@ -45,6 +45,7 @@
 
     <!-- Third party dependencies -->
     <apache-poi.version>5.5.1</apache-poi.version>
+    <commons-io.version>2.21.0</commons-io.version>
     <commons-text.version>1.15.0</commons-text.version>
     <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
 
@@ -61,6 +62,11 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>${commons-io.version}</version>
+      </dependency>
       <dependency>
         <groupId>dev.pcalouche.springforge.spring41x</groupId>
         <artifactId>pcalouche-spring-boot-starter-app</artifactId>
