@@ -455,9 +455,6 @@
               <configuration>
                 <updatePomFile>true</updatePomFile>
                 <flattenMode>resolveCiFriendliesOnly</flattenMode>
-                <pomElements>
-                  <dependencies>resolve</dependencies>
-                </pomElements>
               </configuration>
               <executions>
                 <execution>
