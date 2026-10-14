@@ -9,47 +9,17 @@
     <version>${revision}</version>
   </parent>
 
-  <artifactId>autoconfigure</artifactId>
+  <groupId>dev.pcalouche.springforge.spring41x.autoconfigure</groupId>
+  <artifactId>autoconfigure-pom</artifactId>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>controlleradvice</module>
+  </modules>
 
   <dependencies>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring41x.libs</groupId>
-      <artifactId>exceptions</artifactId>
-      <version>${project.version}</version>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.commons</groupId>
-      <artifactId>commons-lang3</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-autoconfigure-processor</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-configuration-processor</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-validation</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-webmvc</artifactId>
-      <optional>true</optional>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>dev.pcalouche.springforge.spring41x.libs</groupId>
+      <groupId>dev.pcalouche.springforge.spring41x.core</groupId>
       <artifactId>logging-test</artifactId>
       <version>${project.version}</version>
       <scope>test</scope>
@@ -63,23 +33,6 @@
 
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-enforcer-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>ban-transitive-dependencies</id>
-            <goals>
-              <goal>enforce</goal>
-            </goals>
-            <configuration>
-              <rules>
-                <banTransitiveDependencies/>
-              </rules>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>

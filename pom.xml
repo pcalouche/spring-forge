@@ -17,8 +17,8 @@
 
   <modules>
     <module>autoconfigure</module>
-    <module>libs</module>
-    <module>spring-boot-starters</module>
+    <module>core</module>
+    <module>starter</module>
   </modules>
 
   <distributionManagement>
@@ -41,13 +41,11 @@
     <revision>${spring-forge.version}</revision>
 
     <!-- Overrides to Spring Boot Managed dependencies -->
-    <byte-buddy.version>1.18.3</byte-buddy.version>
 
     <!-- Third party dependencies -->
     <apache-poi.version>5.5.1</apache-poi.version>
     <commons-io.version>2.22.0</commons-io.version>
     <commons-text.version>1.15.0</commons-text.version>
-    <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
 
     <!-- Use alternate plugins versions than what is in the spring-boot-starter-parent. -->
 
@@ -68,19 +66,44 @@
         <version>${commons-io.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring41x</groupId>
+        <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
+        <artifactId>pcalouche-spring-boot-starter</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
         <artifactId>pcalouche-spring-boot-starter-app</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring41x</groupId>
+        <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
+        <artifactId>pcalouche-spring-boot-starter-logging</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
+        <artifactId>pcalouche-spring-boot-starter-logging-test</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
         <artifactId>pcalouche-spring-boot-starter-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.logstash.logback</groupId>
-        <artifactId>logstash-logback-encoder</artifactId>
-        <version>${logstash-logback-encoder.version}</version>
+        <groupId>net.energyhub.springenzymes.spring41x.core</groupId>
+        <artifactId>exceptions</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.energyhub.springenzymes.spring41x.core</groupId>
+        <artifactId>logging</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.energyhub.springenzymes.spring41x.core</groupId>
+        <artifactId>logging-test</artifactId>
+        <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
@@ -91,6 +114,21 @@
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
         <version>${apache-poi.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <dependency>
+        <groupId>org.jspecify</groupId>
+        <artifactId>jspecify</artifactId>
+        <version>${jspecify.version}</version>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
@@ -100,6 +138,14 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 
   <repositories>
     <repository>
@@ -229,6 +275,10 @@
               <path>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
+              </path>
+              <path>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure-processor</artifactId>
               </path>
               <path>
                 <groupId>org.springframework.boot</groupId>
