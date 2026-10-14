@@ -25,24 +25,15 @@
 
 ## What is it and why should I care?
 
-Spring Forge is library template that lets you extend Spring Boot so to speak for your company or personal needs. In my career, I have been tasked with improving Spring Boot application development at the company on more than one occasion.
+Spring Forge is library template that lets you extend Spring Boot so to speak for your company or personal needs.
 
-From my experience, handling dependency and plugin management in one place across teams works best. This is something I find many
-developers, including myself for a good while, do not give this as much thought as I think they should. To be fair, it
-is something that takes a while to get the hang of.
+Here are the main reasons I think this project may interest someone:
 
-I also wanted to leverage Spring Boot's custom autoconfiguration feature, so I could handle cross-cutting concerns (e.g.
-logging, error handling, observability, shared application configuration, etc.) across all applications. Bundling this
-autoconfiguration in custom Spring Boot starters saves me time and avoids multiple teams building this functionality in
-different ways.
-
-In summary, here are the main reasons I think this project may interest someone:
-
-- You want Maven dependency and plugin management to be easy, consolidated, and predictable for you or your team
+- You want Maven dependency and plugin management to be easy, consolidated, and predictable for you or your team.
 - You want to create custom Spring Boot autoconfiguration and starters to handle cross-cutting concerns for your Spring
-  Boot applications
-- You want to scaffold new Spring Boot applications that are production ready in a quick and consistent manner, so you can get down to coding the business logic
-- You want to do all the above while supporting multiple Spring Boot versions
+  Boot applications.
+- You want to scaffold new Spring Boot applications that are production ready in a quick and consistent manner, so you can get down to coding the business logic.
+- You want to do all the above while with the ability to support multiple Spring Boot versions.
 
 Feel to use this template and customize it for your needs.
 
@@ -50,12 +41,12 @@ Feel to use this template and customize it for your needs.
 
 Spring Forge consists of the following modules
 
-|                       Module                        |                                             Description                                             | Spring Forge Dependabot Staging Branch |    Spring Forge Maven Group Name    |
-|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------|-------------------------------------|
-| [Spring Forge Starter POM](pom.xml)                 | The root POM that is intended to be used as the parent POM in applications or libraries.            | main-dependabot-staging                | dev.pcalouche.springforge.spring41x |
-| [autoconfigure](autoconfigure)                      | This module contains custom Spring Boot autoconfiguration and its supporting classes.               | spring35x-dependabot-staging           | dev.pcalouche.springforge.spring35x |
-| [libs](libs)                                        | Contains libraries to support the autoconfiguration.                                                |                                        |                                     |
-| [spring-boot-starters-module](spring-boot-starters) | Custom Spring Boot Starters that applications or libraries can use to active Spring Forge features. |                                        |                                     |
+|               Module                |                                             Description                                             |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------|
+| [Spring Forge Starter POM](pom.xml) | The root POM that is intended to be used as the parent POM in applications or libraries.            |
+| [autoconfigure](autoconfigure)      | This module contains custom Spring Boot autoconfiguration and its supporting classes.               |
+| [core](core)                        | Contains libraries to support the autoconfiguration.                                                |
+| [starter](starter)                  | Custom Spring Boot Starters that applications or libraries can use to active Spring Forge features. |
 
 ## Usage
 
@@ -71,7 +62,8 @@ Add the following to your application's POM to use Spring Forge.
 
   <parent>
     <!-- 
-      The last part of the package name represents the Spring Boot version used by Spring Forge. For instance, spring41x maps to Spring Boot 4.0.x and spring35x maps to Spring Boot 3.5.x.
+      The last part of the package name represents the Spring Boot version used by Spring Forge. For instance, 
+      spring41x maps to Spring Boot 4.1.x and spring35x maps to Spring Boot 3.5.x.
     -->
     <groupId>dev.pcalouche.springforge.spring41x</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
@@ -95,13 +87,13 @@ Add the following to your application's POM to use Spring Forge.
   </repositories>
 
   <dependencies>
-    <!-- Add the Spring Forge Starters and any dependencies you want to use. -->
+    <!-- Add the Spring Forge Starters and any other dependencies you want to use. -->
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring41x</groupId>
+      <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
       <artifactId>pcalouche-spring-boot-starter-app</artifactId>
     </dependency>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring41x</groupId>
+      <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
       <artifactId>pcalouche-spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
@@ -169,26 +161,23 @@ The naming conventions for the starters is `<company/owner>-spring-boot-starter-
 ### Common Controller Advice AutoConfiguration
 
 This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. It applies
-the Spring Controller Advice found
-in [CommonControllerAdvice.java](autoconfigure/src/main/java/dev/pcalouche/springforge/autoconfigure/controlleradvice/CommonControllerAdvice.java).
-It can be disabled in an application by setting `springforge.common-controller-advice.enabled=false`. It's methods are
-also protected, so an application is free to extend it to modify the existing behavior.
+the Spring Controller Advice found in [CommonControllerAdvice.java](autoconfigure/controlleradvice/src/main/java/dev/pcalouche/springforge/autoconfigure/controlleradvice/CommonControllerAdvice.java).
+
+It can be disabled in an application by setting `springforge.common-controller-advice.enabled=false`. It's methods are also protected, so an application can easily extend it to modify the default behavior.
 
 ### Logging Auto Configuration
 
-This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. The
-`pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging` which bundles [Logstash](https://github.com/logfellow/logstash-logback-encoder/blob/main/pom.xml) to make advanced logging features available in applications.
+This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. The `pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging`.
 
 ## The Spring Forge Libraries
 
 ### logging
 
-This library contains a [logback-spring.xml](libs/logging/src/main/resources/logback-spring.xml) configuration file to
-standardizing application logging across applications.
+This library contains a [logback-spring.xml](core/logging/src/main/resources/logback-spring.xml) configuration file to standardizing application logging across applications.
 
 ### logging-test
 
-This library contains a [logback-test.xml](libs/logging-test/src/main/resources/logback-test.xml) configuration file to
+This library contains a [logback-test.xml](core/logging-test/src/main/resources/logback-test.xml) configuration file to
 standardizing test logging across applications.
 
 ### exceptions
@@ -204,13 +193,13 @@ Spring Forge uses the following branching strategy in order to support multiple 
 | `4.1.x`             | `main`                      | `dependabot-staging-main`              | `dev.pcalouche.springforge.spring41x` |
 | `3.5.x`             | `spring35x-release`         | `dependabot-staging-spring35x`         | `dev.pcalouche.springforge.spring35x` |
 
-The `main` branch will contain code for the most recent Spring Boot version supported by Spring Forge. How many other release branches depends on what versions of Spring Boot you want Spring Forge to work with. When a release branch is no longer needed it, it can be marked as readonly and have its dependabot configuration removed.
+The `main` branch contains code for the most recent Spring Boot version Spring Forge supports. When a release branch is no longer needed it, it can be marked as readonly and have its dependabot configuration removed.
 
-Each release branch has a corresponding Dependabot Staging Branch that groups Dependabot PRs. I have found this strategy works well for the following reasons:
+Each release branch has a corresponding Dependabot Staging Branch for staging Dependabot PRs. I have found this strategy works well for the following reasons:
 1. If the Spring Forge Starter POM manages many dependencies Dependabot PRs can get numerous
 2. I have found that testing all the accumulated Dependabot updates at once on a regular basis (monthly, quarterly, etc.) is better than testing them individually.
 
-The Dependabot staging branches should be periodically synced with their release branches.
+The Dependabot staging branches should be periodically synced with their corresponding release branches.
 
 See Spring Forge's [dependabot.yml](.github/dependabot.yml) for how this can be implemented.
 
@@ -228,8 +217,8 @@ The standard folder for GitHub configuration. Spring Forge's `.github` folder co
 
 - [workflows/continuous-integration.yml](.github/workflows/continuous-integration.yml) - Workflow for continuous integration
 - [workflows/continuous-delivery.yml](.github/workflows/continuous-delivery.yml) - Workflow for continuous delivery
-- [CODEOWNERS](.github/CODEOWNERS) - A https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners configuration
-- [dependabot.yml](.github/dependabot.yml) - A https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide configuration
+- [CODEOWNERS](.github/CODEOWNERS) - A GitHub code owners configuration. See [GitHub - About code owners](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners) for more details.
+- [dependabot.yml](.github/dependabot.yml) - A Dependabot configuration. See [GitHub - Dependabot quickstart guide](https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide) for more details.
 
 ### The .mvn folder
 
