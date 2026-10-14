@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <!--
+    https://docs.spring.io/spring-boot/3.5/reference/features/logging.html#features.logging.structured is a good
+    reference for understanding this configuration.
+  -->
+
+  <!-- Applies Spring Boot's defaults -->
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+  <!--
+     Console configuration
+     The logic to set the CONSOLE appender is:
+       1. If CONSOLE_LOG_STRUCTURED_FORMAT (Spring maps this from logging.structured.format.console) is not blank use
+          Spring Boot's structured logging configuration.
+       2. If the legacy eh.logging.json-format property is set, use the legacy Spring Enzyme's structured logging
+       3. Otherwise, use Spring Boot's default non-structured logging CONSOLE appender
+  -->
+  <condition class="ch.qos.logback.core.boolex.ExpressionPropertyCondition">
+    <expression>!propertyEquals("CONSOLE_LOG_STRUCTURED_FORMAT", "")</expression>
+  </condition>
+  <if>
+    <then>
+      <include resource="org/springframework/boot/logging/logback/structured-console-appender.xml"/>
+    </then>
+    <else>
+      <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    </else>
+  </if>
+
+  <!-- Register all appenders -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</configuration>
