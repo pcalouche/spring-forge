@@ -41,13 +41,16 @@
     <revision>${spring-forge.version}</revision>
 
     <!-- Overrides to Spring Boot Managed dependencies -->
+    <commons-codec.version>1.23.0</commons-codec.version>
 
     <!-- Third party dependencies -->
     <apache-poi.version>6.0.0</apache-poi.version>
+    <commons-collections4.version>4.6.0</commons-collections4.version>
     <commons-io.version>2.22.0</commons-io.version>
     <commons-text.version>1.15.0</commons-text.version>
 
     <!-- Use alternate plugins versions than what is in the spring-boot-starter-parent. -->
+    <maven-enforcer-plugin.version>3.7.0</maven-enforcer-plugin.version>
 
     <!-- Third party plugin versions. Spring Boot Parent POM manages several already. -->
     <exec-maven-plugin.version>3.6.4</exec-maven-plugin.version>
@@ -64,6 +67,21 @@
         <groupId>commons-io</groupId>
         <artifactId>commons-io</artifactId>
         <version>${commons-io.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.pcalouche.springforge.spring41x.core</groupId>
+        <artifactId>exceptions</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.pcalouche.springforge.spring41x.core</groupId>
+        <artifactId>logging</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>dev.pcalouche.springforge.spring41x.core</groupId>
+        <artifactId>logging-test</artifactId>
+        <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
         <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
@@ -91,19 +109,10 @@
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>net.energyhub.springenzymes.spring41x.core</groupId>
-        <artifactId>exceptions</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.energyhub.springenzymes.spring41x.core</groupId>
-        <artifactId>logging</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.energyhub.springenzymes.spring41x.core</groupId>
-        <artifactId>logging-test</artifactId>
-        <version>${spring-forge.version}</version>
+        <groupId>org.apache.commons</groupId>
+        <artifactId>commons-collections4</artifactId>
+        <version>${commons-collections4.version}</version>
+        <scope>compile</scope>
       </dependency>
       <dependency>
         <groupId>org.apache.commons</groupId>
@@ -114,6 +123,13 @@
         <groupId>org.apache.poi</groupId>
         <artifactId>poi-ooxml</artifactId>
         <version>${apache-poi.version}</version>
+        <exclusions>
+          <!-- Conflicts with Spring Boot version -->
+          <exclusion>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+          </exclusion>
+        </exclusions>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>
