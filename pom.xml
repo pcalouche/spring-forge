@@ -42,6 +42,7 @@
 
     <!-- Overrides to Spring Boot Managed dependencies -->
     <byte-buddy.version>1.18.3</byte-buddy.version>
+    <commons-codec.version>1.23.0</commons-codec.version>
 
     <!-- Third party dependencies -->
     <apache-poi.version>6.0.0</apache-poi.version>
@@ -50,6 +51,7 @@
     <jspecify.version>1.0.1</jspecify.version>
 
     <!-- Use alternate plugins versions than what is in the spring-boot-starter-parent. -->
+    <maven-enforcer-plugin.version>3.7.0</maven-enforcer-plugin.version>
 
     <!-- Third party plugin versions. Spring Boot Parent POM manages several already. -->
     <exec-maven-plugin.version>3.6.4</exec-maven-plugin.version>
