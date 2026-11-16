@@ -4,7 +4,7 @@ on:
   push:
     branches-ignore:
       - main
-      - spring35x-release
+      - sb5x-release
 
 permissions:
   contents: read

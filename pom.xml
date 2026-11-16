@@ -47,6 +47,7 @@
     <!-- Third party dependencies -->
     <apache-poi.version>6.0.0</apache-poi.version>
     <commons-io.version>2.22.0</commons-io.version>
+    <commons-collections4.version>4.6.0</commons-collections4.version>
     <commons-text.version>1.15.0</commons-text.version>
     <jspecify.version>1.0.1</jspecify.version>
 

@@ -63,7 +63,7 @@ Add the following to your application's POM to use Spring Forge.
   <parent>
     <!-- 
       The last part of the package name represents the Spring Boot version used by Spring Forge. For instance, 
-      spring41x maps to Spring Boot 4.1.x and spring35x maps to Spring Boot 3.5.x.
+      sb41x maps to Spring Boot 4.1.x and sb35x maps to Spring Boot 3.5.x.
     -->
     <groupId>pcalouche.springforge.sb41.boot</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
