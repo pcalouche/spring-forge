@@ -14,7 +14,6 @@
      The logic to set the CONSOLE appender is:
        1. If CONSOLE_LOG_STRUCTURED_FORMAT (Spring maps this from logging.structured.format.console) is not blank use
           Spring Boot's structured logging configuration.
-       2. If the legacy eh.logging.json-format property is set, use the legacy Spring Enzyme's structured logging
        3. Otherwise, use Spring Boot's default non-structured logging CONSOLE appender
   -->
   <condition class="ch.qos.logback.core.boolex.ExpressionPropertyCondition">
