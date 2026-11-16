@@ -4,20 +4,19 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>dev.pcalouche.springforge.spring35x</groupId>
+    <groupId>pcalouche.springforge.sb35x.boot</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
     <version>${revision}</version>
   </parent>
 
-  <groupId>dev.pcalouche.springforge.spring35x.starter</groupId>
   <artifactId>starter-pom</artifactId>
   <packaging>pom</packaging>
 
   <modules>
-    <module>pcalouche-spring-boot-starter</module>
-    <module>pcalouche-spring-boot-starter-app</module>
-    <module>pcalouche-spring-boot-starter-logging</module>
-    <module>pcalouche-spring-boot-starter-test</module>
+    <module>spring-forge-logging-spring-boot-starter</module>
+    <module>spring-forge-spring-boot-starter</module>
+    <module>spring-forge-spring-boot-starter-test</module>
+    <module>spring-forge-web-app-spring-boot-starter</module>
   </modules>
 
 </project>
