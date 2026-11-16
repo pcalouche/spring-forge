@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>pcalouche.springforge.sb41x.boot</groupId>
+    <artifactId>starter-pom</artifactId>
+    <version>${revision}</version>
+  </parent>
+
+  <artifactId>spring-forge-logging-spring-boot-starter</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>pcalouche.springforge.sb41x.boot</groupId>
+      <artifactId>spring-forge-spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pcalouche.springforge.sb41x.core</groupId>
+      <artifactId>logging</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

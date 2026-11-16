@@ -30,7 +30,7 @@ updates:
       - central
     schedule:
       interval: "weekly"
-    target-branch: "dependabot-staging-spring35x"
+    target-branch: "dependabot-staging-sb35x"
     open-pull-requests-limit: 10
     groups:
       maven-plugins:
@@ -45,4 +45,4 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    target-branch: "dependabot-staging-spring35x"
+    target-branch: "dependabot-staging-sb35x"
