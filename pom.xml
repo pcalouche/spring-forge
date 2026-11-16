@@ -10,7 +10,7 @@
     <relativePath/>
   </parent>
 
-  <groupId>dev.pcalouche.springforge.spring35x</groupId>
+  <groupId>pcalouche.springforge.sb35x.boot</groupId>
   <artifactId>spring-forge-starter-parent</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
@@ -70,46 +70,6 @@
         <version>${commons-io.version}</version>
       </dependency>
       <dependency>
-        <groupId>dev.pcalouche.springforge.spring35x.starter</groupId>
-        <artifactId>pcalouche-spring-boot-starter</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>dev.pcalouche.springforge.spring35x.starter</groupId>
-        <artifactId>pcalouche-spring-boot-starter-app</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>dev.pcalouche.springforge.spring35x.starter</groupId>
-        <artifactId>pcalouche-spring-boot-starter-logging</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>dev.pcalouche.springforge.spring35x.starter</groupId>
-        <artifactId>pcalouche-spring-boot-starter-logging-test</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>dev.pcalouche.springforge.spring35x.starter</groupId>
-        <artifactId>pcalouche-spring-boot-starter-test</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.energyhub.springenzymes.spring35x.core</groupId>
-        <artifactId>exceptions</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.energyhub.springenzymes.spring35x.core</groupId>
-        <artifactId>logging</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>net.energyhub.springenzymes.spring35x.core</groupId>
-        <artifactId>logging-test</artifactId>
-        <version>${spring-forge.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-text</artifactId>
         <version>${commons-text.version}</version>
@@ -123,6 +83,46 @@
         <groupId>org.jspecify</groupId>
         <artifactId>jspecify</artifactId>
         <version>${jspecify.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.boot</groupId>
+        <artifactId>pcalouche-spring-boot-starter-logging-test</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.boot</groupId>
+        <artifactId>spring-forge-logging-spring-boot-starter</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.boot</groupId>
+        <artifactId>spring-forge-spring-boot-starter</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.boot</groupId>
+        <artifactId>spring-forge-spring-boot-starter-test</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.boot</groupId>
+        <artifactId>spring-forge-web-app-spring-boot-starter</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.core</groupId>
+        <artifactId>exceptions</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.core</groupId>
+        <artifactId>logging</artifactId>
+        <version>${spring-forge.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>pcalouche.springforge.sb35x.core</groupId>
+        <artifactId>logging-test</artifactId>
+        <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
         <groupId>org.projectlombok</groupId>

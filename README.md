@@ -65,13 +65,13 @@ Add the following to your application's POM to use Spring Forge.
       The last part of the package name represents the Spring Boot version used by Spring Forge. For instance, 
       spring41x maps to Spring Boot 4.1.x and spring35x maps to Spring Boot 3.5.x.
     -->
-    <groupId>dev.pcalouche.springforge.spring41x</groupId>
+    <groupId>pcalouche.springforge.sb41.boot</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath/>
   </parent>
 
-  <groupId>dev.pcalouche</groupId>
+  <groupId>pcalouche</groupId>
   <artifactId>spring-forge-service-template</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
@@ -89,12 +89,12 @@ Add the following to your application's POM to use Spring Forge.
   <dependencies>
     <!-- Add the Spring Forge Starters and any other dependencies you want to use. -->
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
-      <artifactId>pcalouche-spring-boot-starter-app</artifactId>
+      <groupId>pcalouche.springforge.sb41x.boot</groupId>
+      <artifactId>spring-forge-web-app-spring-boot-starter</artifactId>
     </dependency>
     <dependency>
-      <groupId>dev.pcalouche.springforge.spring41x.starter</groupId>
-      <artifactId>pcalouche-spring-boot-starter-test</artifactId>
+      <groupId>pcalouche.springforge.sb41x.boot</groupId>
+      <artifactId>spring-forge-spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -156,18 +156,34 @@ This section describes the available Spring Forge custom autoconfiguration.
 
 ### Naming convention
 
-The naming conventions for the starters is `<company/owner>-spring-boot-starter-<function>`.
+**NOTE:** These conventions come from [Spring Boot | Creating Your Own Auto-configuration | Naming](https://docs.spring.io/spring-boot/reference/features/developing-auto-configuration.html#features.developing-auto-configuration.custom-starter.naming).
+
+The naming conventions for the starters is `spring-forge-<integration/technology>-spring-boot-starter`. If the starter is a test scoped starter, it ends in `test`. This convention comes from [Spring Boot | Creating Your Own Auto-configuration | Naming](https://docs.spring.io/spring-boot/reference/features/developing-auto-configuration.html#features.developing-auto-configuration.custom-starter.naming).
+
+Examples could be:
+- `spring-forge-redis-spring-boot-starter`
+- `spring-forge-redis-spring-boot-starter-test`
+- `spring-forge-quartz-spring-boot-starter-test`
+- `spring-forge-web-app-spring-boot-starter-test`
+- `spring-forge-aws-messaging-spring-boot-starter-test`
+
+If a start is more than a group of dependencies, (i.e., it has an autoconfiguration component), it's naming convention is `spring-forge-<integration/technology>-spring-boot`. If the autoconfiguration is test scoped autoconfiguration, it ends in `test`.
+
+Examples could be:
+- `spring-forge-redis-spring-boot`
+- `spring-forge-redis-spring-boot-test`
+- `spring-forge-controlleradvice-spring-boot`
 
 ### Common Controller Advice AutoConfiguration
 
-This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. It applies
-the Spring Controller Advice found in [CommonControllerAdvice.java](autoconfigure/controlleradvice/src/main/java/dev/pcalouche/springforge/autoconfigure/controlleradvice/CommonControllerAdvice.java).
+This autoconfiguration is enabled by default if the `spring-forge-web-app-spring-boot-starter` is on the classpath. It applies
+the Spring Controller Advice found in [CommonControllerAdvice.java](autoconfigure/controlleradvice/src/main/java/pcalouche/springforge/boot/autoconfigure/controlleradvice/CommonControllerAdvice.java).
 
 It can be disabled in an application by setting `springforge.common-controller-advice.enabled=false`. It's methods are also protected, so an application can easily extend it to modify the default behavior.
 
 ### Logging Auto Configuration
 
-This autoconfiguration is enabled by default if the `pcalouche-spring-boot-starter-app` is on the classpath. The `pcalouche-spring-boot-starter-app` includes `pcalouche-spring-boot-starter-logging`.
+This autoconfiguration is enabled by default if the `spring-forge-web-app-spring-boot-starter` is on the classpath. The `spring-forge-web-app-spring-boot-starter` includes `spring-forge-logging-spring-boot-starter`.
 
 ## The Spring Forge Libraries
 
@@ -188,10 +204,10 @@ This library contains common exception classes that can be used across applicati
 
 Spring Forge uses the following branching strategy in order to support multiple Spring Forge versions that use different versions of Spring Boot.
 
-| Spring Boot Version | Spring Forge Release Branch | Spring Forge Dependabot Staging Branch |     Spring Forge Maven Group Name     |
-|---------------------|-----------------------------|----------------------------------------|---------------------------------------|
-| `4.1.x`             | `main`                      | `dependabot-staging-main`              | `dev.pcalouche.springforge.spring41x` |
-| `3.5.x`             | `spring35x-release`         | `dependabot-staging-spring35x`         | `dev.pcalouche.springforge.spring35x` |
+| Spring Boot Version | Spring Forge Release Branch | Spring Forge Dependabot Staging Branch | Spring Forge Maven Group Name |
+|---------------------|-----------------------------|----------------------------------------|-------------------------------|
+| `4.1.x`             | `main`                      | `dependabot-staging-main`              | `pcalouche.springforge.sb41x` |
+| `3.5.x`             | `sb35x-release`             | `dependabot-staging-sb35x`             | `pcalouche.springforge.sb35x` |
 
 The `main` branch contains code for the most recent Spring Boot version Spring Forge supports. When a release branch is no longer needed it, it can be marked as readonly and have its dependabot configuration removed.
 
