@@ -28,7 +28,6 @@
     <dependency>
       <groupId>pcalouche.springforge.sb35x.core</groupId>
       <artifactId>exceptions</artifactId>
-      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>jakarta.servlet</groupId>
