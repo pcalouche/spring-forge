@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pcalouche.springforge.sb41x.boot</groupId>
+    <groupId>pcalouche.springforge.sb42x.boot</groupId>
     <artifactId>starter-pom</artifactId>
     <version>${revision}</version>
   </parent>
@@ -25,12 +25,12 @@
       <artifactId>spring-boot-starter-webmvc</artifactId>
     </dependency>
     <dependency>
-      <groupId>pcalouche.springforge.sb41x.boot</groupId>
+      <groupId>pcalouche.springforge.sb42x.boot</groupId>
       <artifactId>spring-forge-controlleradvice-spring-boot</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>pcalouche.springforge.sb41x.boot</groupId>
+      <groupId>pcalouche.springforge.sb42x.boot</groupId>
       <artifactId>spring-forge-logging-spring-boot-starter</artifactId>
     </dependency>
   </dependencies>

@@ -6,11 +6,11 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>4.1.2</version>
+    <version>4.2.0</version>
     <relativePath/>
   </parent>
 
-  <groupId>pcalouche.springforge.sb41x.boot</groupId>
+  <groupId>pcalouche.springforge.sb42x.boot</groupId>
   <artifactId>spring-forge-starter-parent</artifactId>
   <version>${revision}</version>
   <packaging>pom</packaging>
@@ -97,42 +97,42 @@
         <version>${jspecify.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.boot</groupId>
+        <groupId>pcalouche.springforge.sb42x.boot</groupId>
         <artifactId>pcalouche-spring-boot-starter-logging-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.boot</groupId>
+        <groupId>pcalouche.springforge.sb42x.boot</groupId>
         <artifactId>spring-forge-logging-spring-boot-starter</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.boot</groupId>
+        <groupId>pcalouche.springforge.sb42x.boot</groupId>
         <artifactId>spring-forge-spring-boot-starter</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.boot</groupId>
+        <groupId>pcalouche.springforge.sb42x.boot</groupId>
         <artifactId>spring-forge-spring-boot-starter-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.boot</groupId>
+        <groupId>pcalouche.springforge.sb42x.boot</groupId>
         <artifactId>spring-forge-web-app-spring-boot-starter</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.core</groupId>
+        <groupId>pcalouche.springforge.sb42x.core</groupId>
         <artifactId>exceptions</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.core</groupId>
+        <groupId>pcalouche.springforge.sb42x.core</groupId>
         <artifactId>logging</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
       <dependency>
-        <groupId>pcalouche.springforge.sb41x.core</groupId>
+        <groupId>pcalouche.springforge.sb42x.core</groupId>
         <artifactId>logging-test</artifactId>
         <version>${spring-forge.version}</version>
       </dependency>
@@ -146,6 +146,10 @@
   </dependencyManagement>
 
   <dependencies>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-collections4</artifactId>
+    </dependency>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
