@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pcalouche.springforge.sb41x.boot</groupId>
+    <groupId>pcalouche.springforge.sb42x.boot</groupId>
     <artifactId>spring-forge-starter-parent</artifactId>
     <version>${revision}</version>
   </parent>
@@ -23,7 +23,7 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>pcalouche.springforge.sb41x.core</groupId>
+      <groupId>pcalouche.springforge.sb42x.core</groupId>
       <artifactId>logging-test</artifactId>
       <scope>test</scope>
     </dependency>

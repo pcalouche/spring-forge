@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pcalouche.springforge.sb41x.boot</groupId>
+    <groupId>pcalouche.springforge.sb42x.boot</groupId>
     <artifactId>autoconfigure-pom</artifactId>
     <version>${revision}</version>
   </parent>
@@ -26,7 +26,7 @@
       <artifactId>spring-boot-autoconfigure</artifactId>
     </dependency>
     <dependency>
-      <groupId>pcalouche.springforge.sb41x.core</groupId>
+      <groupId>pcalouche.springforge.sb42x.core</groupId>
       <artifactId>exceptions</artifactId>
     </dependency>
     <dependency>

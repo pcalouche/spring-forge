@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pcalouche.springforge.sb41x.boot</groupId>
+    <groupId>pcalouche.springforge.sb42x.boot</groupId>
     <artifactId>starter-pom</artifactId>
     <version>${revision}</version>
   </parent>
